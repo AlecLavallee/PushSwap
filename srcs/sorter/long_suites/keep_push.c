@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keep_push.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:34:38 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:35:01 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
 /* Compte la plus longue suite de target_index triés dans l'ordre croissant*/
@@ -5,8 +17,8 @@
 int	largest_keep_a(t_node *start, t_stack *stack, bool define)
 {
 	t_node	*elem;
-	int			index_max;
-	int			count;
+	int		index_max;
+	int		count;
 
 	elem = start;
 	index_max = 0;
@@ -36,8 +48,8 @@ t_node	*get_max_keep(t_stack *stack)
 {
 	t_node	*elem;
 	t_node	*max;
-	int			max_keep;
-	int			cur;
+	int		max_keep;
+	int		cur;
 
 	max_keep = 0;
 	elem = stack->top;
@@ -46,8 +58,8 @@ t_node	*get_max_keep(t_stack *stack)
 		cur = largest_keep_a(elem, stack, false);
 		if (cur > max_keep)
 		{
-			 max_keep = cur;
-			 max = elem;
+			max_keep = cur;
+			max = elem;
 		}
 		elem = elem->next;
 	}
@@ -58,7 +70,7 @@ t_node	*get_max_keep(t_stack *stack)
 void	set_keep(t_all *all)
 {
 	t_node	*max;
-	t_stack		*stack;
+	t_stack	*stack;
 
 	stack = all->a;
 	max = get_max_keep(stack);

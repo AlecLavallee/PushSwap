@@ -1,44 +1,56 @@
-#ifndef STACK
-#define STACK
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:38:45 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:41:25 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct    s_node
+#ifndef STACK_H
+# define STACK_H
+
+typedef struct s_node
 {
-	int value;
-	bool keep;
-	struct s_node *init_pos;
-	int		i;
-	struct s_node *next;
+	int				value;
+	bool			keep;
+	struct s_node	*init_pos;
+	int				i;
+	struct s_node	*next;
 }				t_node;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	struct s_node		*top;
 }				t_stack;
 
-typedef struct  s_all
+typedef struct s_all
 {
 	struct s_stack	*a;
-	struct s_stack  *b;
+	struct s_stack	*b;
 	struct s_node	*first_a;
 	struct s_node	*first_b;
-	int	size_a;
-	int size_b;
-	int max;
-	int max_size;
-	int action_count;
-}               t_all;
+	int				size_a;
+	int				size_b;
+	int				max;
+	int				max_size;
+	int				action_count;
+}				t_all;
 
 typedef struct s_params
 {
 	t_node	*elem;
 	t_node	*best;
-	int			c_for_a;
-	int			c_for_b;
-	int			min_move;
-	int			total;
-	int			action_b;
-	int			min_a;
-	int			min_b;
+	int		c_for_a;
+	int		c_for_b;
+	int		min_move;
+	int		total;
+	int		action_b;
+	int		min_a;
+	int		min_b;
 }				t_params;
 
 int		check_list(char **list);

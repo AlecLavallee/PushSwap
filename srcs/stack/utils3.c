@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils3.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:31:20 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:45:29 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
-
-/* Déplace l'élèment jusqu'en haut de la pile */
+/* Bring element to the top of the stack */
 void	bring_to_top(t_stack *sta, int x, t_all *all)
 {
 	if (!sta)
@@ -20,11 +31,11 @@ void	bring_to_top(t_stack *sta, int x, t_all *all)
 	}
 }
 
-/* Fonction permettant de savoir dans quel moitie de la stack se situe l'elem */
+/* Find in which half of the stack you're in*/
 int	where_middle(t_stack *a, int value)
 {
 	t_node	*elem;
-	float		i;
+	float	i;
 
 	if (!a)
 		return (-1);
@@ -45,10 +56,10 @@ int	where_middle(t_stack *a, int value)
 	return (-1);
 }
 
-/* Fonction qui identifie le plus grand élément */
+/* Indentify biggest element of the stack*/
 int	biggest(t_stack *a)
 {
-	int			biggest;
+	int		biggest;
 	t_node	*elem;
 
 	if (!a)
@@ -64,10 +75,10 @@ int	biggest(t_stack *a)
 	return (biggest);
 }
 
-/* Identifie le plus petit élèment */
+/* Identify smallest element of the stack*/
 int	smallest(t_stack *a)
 {
-	int			smallest;
+	int		smallest;
 	t_node	*elem;
 
 	if (!a)
@@ -83,7 +94,7 @@ int	smallest(t_stack *a)
 	return (smallest);
 }
 
-/* Indique si la valeur mentionnée est en haut de la pile */
+/* Returns success if value x is at the top of the stack */
 int	is_on_top(t_stack *a, int x)
 {
 	if (a->top->value == x)

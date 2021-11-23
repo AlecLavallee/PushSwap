@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   target_index.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:33:55 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:34:18 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
 /* Bubble sort pour déterminer à quelle position devrait se trouver l'élément */
 /* Retourne une copie de la stack passée en paramètre */
 t_stack	*cpy_stack(t_stack *sta, t_all *all, t_params *params)
 {
-	t_stack		*cpy;
+	t_stack	*cpy;
 	t_node	*read;
 
 	if (!sta)
@@ -37,7 +49,7 @@ void	bubble_swap(t_node **ori, t_node **tmplst, t_node **elem, int *t)
 /* Afin de déterminer le target index */
 t_stack	*bubble_sort_it(t_stack *cpy)
 {
-	int			temp;
+	int		temp;
 	t_node	*origin;
 	t_node	*tmplst;
 	t_node	*elem;
@@ -64,7 +76,7 @@ t_stack	*bubble_sort_it(t_stack *cpy)
 void	set_target_index_cpy(t_stack *cpy)
 {
 	t_node	*elem;
-	int			index;
+	int		index;
 
 	elem = cpy->top;
 	index = 0;

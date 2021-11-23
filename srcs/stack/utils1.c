@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils1.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:27:56 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:32:28 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
-/* Indique si une pile est vide ou non */
+/* Returns true if the stack is sorted or else false */
 bool	is_empty_stack(t_stack *sta)
 {
 	if (sta->top == NULL)
@@ -8,10 +20,10 @@ bool	is_empty_stack(t_stack *sta)
 	return (false);
 }
 
-/* Indique la longueur de la pile passée en paramètre */
+/* Returns the length of the stack as int */
 int	stack_length(t_stack *sta)
 {
-	int			length;
+	int		length;
 	t_node	*elem;
 
 	if (!sta)
@@ -26,7 +38,7 @@ int	stack_length(t_stack *sta)
 	return (length);
 }
 
-/* Initialise notre structure */
+/* Initialize structure */
 t_all	*init_all(void)
 {
 	t_all	*all;
@@ -46,6 +58,7 @@ t_all	*init_all(void)
 	return (all);
 }
 
+/* parse the args */
 int	push_args(char *string, t_all *all, int *args)
 {
 	long	x;
@@ -69,6 +82,7 @@ int	push_args(char *string, t_all *all, int *args)
 	return (SUCCESS);
 }
 
+/* read the args passed in parameter */
 int	read_args(int argc, char **argv, t_all *all)
 {
 	int		args;

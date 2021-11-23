@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils4.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:27:18 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:27:46 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
-/* Verifie doublons et sera appelée quand on insère un nouvel elem */
+/* Search duplicates value in stack a*/
 void	check_duplicates(t_all *all)
 {
 	t_node	*elem1;
@@ -21,7 +33,7 @@ void	check_duplicates(t_all *all)
 	}
 }
 
-/* Retourne la valeur absolue d'un élément */
+/* Return absolute value of int x */
 int	abs_value(int x)
 {
 	if (x < 0)
@@ -29,7 +41,7 @@ int	abs_value(int x)
 	return (x);
 }
 
-/* Initialise la structure de params pour le calcul des actions */
+/* Initialize the params structure */
 t_params	init_params(t_all *all)
 {
 	t_params	params;

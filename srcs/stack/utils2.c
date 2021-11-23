@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 16:32:48 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/23 16:45:25 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushSwap.h"
 
-/* Cherche un doublon sur les petites suites */
+/* Find a duplicate on a small stack */
 int	find_duplicate_small(t_stack *a)
 {
-	int			i;
+	int		i;
 	t_node	*elem;
 	t_node	*tmp;
 
@@ -26,7 +38,7 @@ int	find_duplicate_small(t_stack *a)
 	return (i);
 }
 
-/* Détermine si la stack est triée ou pas */
+/* Returns success if the stack is sorted */
 int	is_sorted_stack(t_stack *a)
 {
 	t_node	*elem;
