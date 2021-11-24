@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushSwap.h                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:37:40 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:44:26 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:44:52 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef     PUSHSWAP_H
-# define    PUSHSWAP_H
+#ifndef     PUSH_SWAP_H
+# define    PUSH_SWAP_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -68,7 +68,7 @@ void		sort_two(t_stack *a, t_all *all);
 void		sort_three(t_stack *a, t_all *all);
 int			biggest(t_stack *a);
 int			smallest(t_stack *a);
-t_stack		*bubble_sort_it(t_stack *cpy);
+t_stack		*bubble_sort_cpy(t_stack *cpy);
 void		set_target_index_cpy(t_stack *cpy);
 void		set_target_index(t_stack *sta);
 int			largest_keep_a(t_node *elem, t_stack *stack, bool define);

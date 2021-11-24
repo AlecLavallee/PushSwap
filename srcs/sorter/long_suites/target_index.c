@@ -6,14 +6,13 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:33:55 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:34:18 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:45:50 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Bubble sort pour déterminer à quelle position devrait se trouver l'élément */
-/* Retourne une copie de la stack passée en paramètre */
+/* Returns a copy of the original stack */
 t_stack	*cpy_stack(t_stack *sta, t_all *all, t_params *params)
 {
 	t_stack	*cpy;
@@ -45,9 +44,8 @@ void	bubble_swap(t_node **ori, t_node **tmplst, t_node **elem, int *t)
 	(*tmplst)->init_pos = *ori;
 }
 
-/* Une fois la copie réalisée, nous devons la trier via bubblesort */
-/* Afin de déterminer le target index */
-t_stack	*bubble_sort_it(t_stack *cpy)
+/* Applies bubble sort on the copied stack and returns it sorted */
+t_stack	*bubble_sort_cpy(t_stack *cpy)
 {
 	int		temp;
 	t_node	*origin;

@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:38 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:35:41 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:26:33 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 void	free_stack(t_stack *sta)
 {

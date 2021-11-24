@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:31:20 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:45:29 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:25:56 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Bring element to the top of the stack */
 void	bring_to_top(t_stack *sta, int x, t_all *all)

@@ -6,87 +6,65 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:44:08 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 17:09:20 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 12:33:02 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strclen(const char *str, char c)
+int	ft_len(const char *s)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (-1);
-	while (str[i] && str[i] != c)
+	if (!s)
+		return (0);
+	while (s[i])
 		i++;
-	if (str[i] != c)
-		return (-1);
 	return (i);
 }
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*gnl_strjoin(char *s1, char *s2, t_all *all)
 {
-	int		i;
-	int		j;
-	char	*str;
+	char	*single;
+	size_t	i;
+	size_t	j;
+	size_t	l;
 
+	single = (char *)malloc(sizeof(char) * (ft_len(s1) + ft_len(s2) + 1));
+	if ((!s1 && !s2) || !(single))
+		error(all, 1, NULL, NULL);
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) \
-		* (ft_strclen(s1, '\0') + ft_strclen(s2, '\0') + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
+	l = ft_len(s1);
+	while (i < l)
 	{
-		str[i] = s1[i];
+		single[i] = s1[i];
 		i++;
 	}
-	while (s2[j])
+	l = ft_len(s2);
+	while (j < l)
 	{
-		str[i + j] = s2[j];
+		single[i + j] = s2[j];
 		j++;
 	}
-	str[i + j] = '\0';
+	single[i + j] = '\0';
 	free(s1);
-	return (str);
+	return (single);
 }
 
-char	*ft_strncpy(char *dst, char *src, int n)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = NULL;
-	(void)dst;
-	if (n >= 0)
-	{
-		str = (char *)malloc(sizeof(char) * (ft_strclen(src, '\0') + n));
-		if (!str)
-			return (NULL);
-		while (src[i] && i < n)
-		{
-			str[i] = src[i];
-			i++;
-		}
-		str[i] = '\0';
-	}
-	return (str);
-}
-
-char	*ft_strtrim_left(char *str, int n)
+void	check_line(char *line, t_all *all)
 {
 	int	i;
 
 	i = 0;
-	while (str[n] != '\0')
+	while (line[i])
 	{
-		str[i] = str[n];
+		if (ft_isalpha(line[i]))
+		{
+			free(line);
+			error(all, 1, NULL, NULL);
+		}
 		i++;
-		n++;
 	}
-	str[i] = '\0';
-	return (str);
 }

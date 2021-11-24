@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:36:13 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:36:14 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:41:33 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Permet de pousser le premier élément de la stack a sur la stack b */
 void	push_other_stack(t_stack *one, t_stack *two)
@@ -91,7 +91,6 @@ void	push_end_plus_origin(t_stack *sta, int x, t_node *ori, t_all *m)
 	elem->next = NULL;
 }
 
-/* Action PA demandee dans le sujet */
 void	pa(t_stack *one, t_stack *two, int print, t_all *all)
 {
 	if (is_empty_stack(one))
@@ -102,7 +101,6 @@ void	pa(t_stack *one, t_stack *two, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action PB demandee dans le sujet */
 void	pb(t_stack *one, t_stack *two, int print, t_all *all)
 {
 	if (is_empty_stack(one))

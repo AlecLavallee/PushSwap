@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:27:18 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:27:46 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:26:02 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Search duplicates value in stack a*/
 void	check_duplicates(t_all *all)

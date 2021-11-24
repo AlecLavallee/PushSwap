@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:26:53 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:27:42 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:44:36 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* main algorithm of the program */
 void	algorithm(t_all *all)
@@ -20,7 +20,7 @@ void	algorithm(t_all *all)
 
 	params = init_params(all);
 	cpy = cpy_stack(all->a, all, &params);
-	bubble_sort_it(cpy);
+	bubble_sort_cpy(cpy);
 	set_target_index_cpy(cpy);
 	set_target_index(cpy);
 	free_stack(cpy);

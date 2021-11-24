@@ -6,13 +6,13 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:36:33 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:36:35 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:43:12 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Fonction de swap utile pour les différentes actions */
+/* Swap first two elements of the specified stack */
 void	swap_ab(t_stack *sta)
 {
 	t_node	*elem;
@@ -30,7 +30,6 @@ void	swap_ab(t_stack *sta)
 	}
 }
 
-/* Action SA demandée dans le sujet */
 void	sa(t_stack *a, int print, t_all *all)
 {
 	if (!a || !all)
@@ -41,7 +40,6 @@ void	sa(t_stack *a, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action SB demandée dans le sujet */
 void	sb(t_stack *b, int print, t_all *all)
 {
 	if (!b || !all)
@@ -52,7 +50,6 @@ void	sb(t_stack *b, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action SS demandée dans le sujet*/
 void	ss(t_stack *a, t_stack *b, int print, t_all *all)
 {
 	if (!a || !b || !all)

@@ -6,14 +6,14 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:34:38 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:35:01 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:18:27 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Compte la plus longue suite de target_index triés dans l'ordre croissant*/
-/* Va renseigner keep a true si bool define est true */
+/* Finds the longest suit of already sorted elements in target */
+/* sets keep variable to true if define is set to true */
 int	largest_keep_a(t_node *start, t_stack *stack, bool define)
 {
 	t_node	*elem;
@@ -43,7 +43,7 @@ int	largest_keep_a(t_node *start, t_stack *stack, bool define)
 	return (count);
 }
 
-/* Retourne l'adresse du premiere élément de la suite triée à garder sur A */
+/* returns the address of the first element of the sorted suit to keep in A */
 t_node	*get_max_keep(t_stack *stack)
 {
 	t_node	*elem;
@@ -66,7 +66,7 @@ t_node	*get_max_keep(t_stack *stack)
 	return (max);
 }
 
-/* Va determiner la plus longue suite d'index triés et mettre keep a true */
+/* Determines the longest suit of elements already sorted */
 void	set_keep(t_all *all)
 {
 	t_node	*max;
@@ -77,7 +77,7 @@ void	set_keep(t_all *all)
 	all->max_size = largest_keep_a(max, stack, true);
 }
 
-/* Mets sur la stack B tous ceux dont keep = false */
+/* Push every elements of stack A to B if variable keep = false */
 void	push_keep_false_b(t_all *all)
 {
 	int	size;

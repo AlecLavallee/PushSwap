@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:29:04 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:29:06 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:24:07 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 int	ft_isalpha(int c)
 {

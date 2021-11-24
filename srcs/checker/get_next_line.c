@@ -6,70 +6,105 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:43:19 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 17:06:02 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 12:33:02 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "get_next_line.h"
 
-char	*init_stock(char **stock, int fd, void *tmp, int i)
+int	ft_hasnewline(char *str)
 {
-	stock = malloc(sizeof(char));
-	if ((read(fd, tmp, 0) == -1) || !line || !stock)
-		return (NULL);
-	stock[0] = '\0';
-	return (stock);
-}
+	int	i;
 
-int	ft_secure(char **stock, char **line, int i)
-{
-	if (i == 1)
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		if (!stock || !line)
-		{
-			if (*stock)
-			{
-				free(*stock);
-				*stock = NULL;
-			}
-			if (*line)
-			{
-				free(*line);
-				*line = NULL;
-			}
-		}
-		return (1);
-	}
-	if (*stock && i == 2)
-	{
-		free(*stock);
-		*stock = NULL;
+		if (str[i] == '\n')
+			return (1);
+		i++;
 	}
 	return (0);
 }
 
-int	get_next_line(int fd, char **line)
+char	*ft_newline(char *s, t_all *all)
 {
-	int				i;
-	static char		*stock = NULL;
-	char			tmp[BUFFER_SIZE + 1];
+	char	*new_line;
+	int		i;
 
-	if (!stock || init_stock(stock, fd, tmp, i) == NULL)
-		return (-1);
-	while (ft_strclen(stock, '\n') == -1)
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (s[i] && s[i] != '\n')
+		i++;
+	new_line = (char *)malloc(sizeof(char) * (i + 1));
+	if (!(new_line))
+		error(all, 1, NULL, NULL);
+	i = 0;
+	while (s[i] && s[i] != '\n')
 	{
-		i = read(fd, tmp, BUFFER_SIZE));
-		if (i < 0)
-			break ;
-		tmp[i] = '\0';
-		stock = ft_strcat(stock, tmp);
+		new_line[i] = s[i];
+		i++;
 	}
-	if (ft_strclen(stock, '\n') != -1)
+	new_line[i] = '\0';
+	return (new_line);
+}
+
+char	*ft_prep_s(char *s)
+{
+	int		i;
+	int		j;
+	char	*clean_s;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i] != '\n' && s[i])
+		i++;
+	if (!s[i])
 	{
-		*line = ft_strncpy(*line, stock, ft_strclen(stock, '\n'));
-		stock = ft_strtrim_left(stock, ft_strclen(stock, '\n') + 1);
-		return (ft_secure(&stock, line, 1));
+		free(s);
+		return (NULL);
 	}
-	*line = ft_strncpy(*line, stock, ft_strclen(stock, '\0'));
-	return (ft_secure(&stock, line, 2));
+	clean_s = (char *)malloc(sizeof(char) * (ft_len(s) - i + 1));
+	if (!clean_s)
+		return (NULL);
+	i++;
+	while (s[i])
+		clean_s[j++] = s[i++];
+	clean_s[j] = '\0';
+	free(s);
+	return (clean_s);
+}
+
+int	get_next_line(int fd, char **line, t_all *all)
+{
+	static char	*s;
+	int			b_read;
+	char		*buffer;
+
+	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (fd < 0 || BUFFER_SIZE < 1 || !line || !buffer)
+		error(all, 1, NULL, NULL);
+	b_read = BUFFER_SIZE;
+	while (b_read != 0 && !(ft_hasnewline(s)))
+	{
+		b_read = read(fd, buffer, BUFFER_SIZE);
+		if (b_read == -1)
+		{
+			free(buffer);
+			return (-1);
+		}
+		buffer[b_read] = '\0';
+		s = gnl_strjoin(s, buffer, all);
+	}
+	free(buffer);
+	*line = ft_newline(s, all);
+	s = ft_prep_s(s);
+	if (b_read == 0)
+		return (ERROR);
+	return (SUCCESS);
 }

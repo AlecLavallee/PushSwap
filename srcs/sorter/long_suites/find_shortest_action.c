@@ -6,13 +6,13 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:09 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:35:14 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:11:21 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Calcule de façon optimiséele nombre d'actions a faire */
+/* Determines the best number of actions to do */
 int	optimize_actions(int c_a, int c_b)
 {
 	if (c_a > 0 && c_b > 0)
@@ -58,8 +58,7 @@ int	where_to_insert(t_stack *sta, int x, t_node *tmp, t_node *prev)
 		pos -= stack_length(sta);
 	return (pos);
 }
-
-/* Calcule le plus petit nombre d'actions a faire pour trier un element */
+/* Finds the smallest number of actions to sort the element */
 t_node	*evaluate_actions(t_all *all, t_params *params)
 {
 	t_node	*tmp;

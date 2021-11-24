@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:34:24 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:34:29 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:26:45 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 int	sort_mins(t_all *all, t_params *params)
 {
@@ -29,6 +29,7 @@ int	sort_mins(t_all *all, t_params *params)
 	return (SUCCESS);
 }
 
+/* executes all the actions stored in params */
 int	sort(t_all *all, t_params *params)
 {
 	if ((params->min_b > 0 && params->min_a > 0)

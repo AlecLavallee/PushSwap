@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:32:48 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:45:25 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:25:46 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Find a duplicate on a small stack */
 int	find_duplicate_small(t_stack *a)

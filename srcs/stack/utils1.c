@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:27:56 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:32:28 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:25:40 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Returns true if the stack is sorted or else false */
 bool	is_empty_stack(t_stack *sta)

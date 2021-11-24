@@ -6,11 +6,11 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:33:42 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:33:48 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:30:49 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
 /* Sort two unsorted elements */
 void	sort_two(t_stack *a, t_all *all)
@@ -25,7 +25,7 @@ void	sort_two(t_stack *a, t_all *all)
 	free_all(all, NULL, NULL);
 }
 
-/* Gere le tri pour une suite de 3 éléments */
+/* Manages sorting of suits of 3 elements */
 void	sort_three(t_stack *a, t_all *all)
 {
 	int				one;
@@ -73,7 +73,7 @@ void	prep_set(t_stack *a, t_stack *b, t_all *all)
 	}
 }
 
-/* Gere les suites de 4 a 5 */
+/* Manages sorting of 4 to 5 elements suites */
 void	sort_more_three(t_stack *a, t_stack *b, t_all *all)
 {
 	int	stack_len;
@@ -92,7 +92,7 @@ void	sort_more_three(t_stack *a, t_stack *b, t_all *all)
 	free_all(all, NULL, NULL);
 }
 
-/* Gere tous les cas de petites suites */
+/* Manages all sorting of small suits */
 int	small_cases(t_stack *a, t_stack *b, t_all *all)
 {
 	if (stack_length(a) == 1)

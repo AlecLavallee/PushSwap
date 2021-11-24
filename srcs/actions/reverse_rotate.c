@@ -6,13 +6,12 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:36:20 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:36:24 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:40:38 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Fonction de reverse rotate utile pour les différentes actions */
 void	reverse_rotate(t_stack *sta)
 {
 	t_node	*prev;
@@ -31,7 +30,6 @@ void	reverse_rotate(t_stack *sta)
 	prev->next = NULL;
 }
 
-/* Action RRA demandée dans le sujet */
 void	rra(t_stack *a, int print, t_all *all)
 {
 	reverse_rotate(a);
@@ -40,7 +38,6 @@ void	rra(t_stack *a, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action RRB demandée dans le sujet*/
 void	rrb(t_stack *b, int print, t_all *all)
 {
 	reverse_rotate(b);
@@ -49,7 +46,6 @@ void	rrb(t_stack *b, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action RRR demandée dans le sujet */
 void	rrr(t_stack *a, t_stack *b, int print, t_all *all)
 {
 	reverse_rotate(a);

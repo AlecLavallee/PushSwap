@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 16:36:26 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:36:29 by alelaval         ###   ########.fr       */
+/*   Created: Invalid date        by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/24 13:39:50 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushSwap.h"
+#include "push_swap.h"
 
-/* Fonction rotate utile pour toutes les actions */
 void	rotate_stack(t_stack *sta)
 {
 	t_node	*last;
@@ -27,7 +26,6 @@ void	rotate_stack(t_stack *sta)
 	last->next = tmp;
 }
 
-/* Action RA demandée dans le sujet */
 void	ra(t_stack *a, int print, t_all *all)
 {
 	if (!a || !all)
@@ -38,7 +36,6 @@ void	ra(t_stack *a, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action RB demandée dans le sujet */
 void	rb(t_stack *b, int print, t_all *all)
 {
 	if (!b || !all)
@@ -49,7 +46,6 @@ void	rb(t_stack *b, int print, t_all *all)
 	all->action_count++;
 }
 
-/* Action RR demandée dans le sujet */
 void	rr(t_stack *a, t_stack *b, int print, t_all *all)
 {
 	if (!b || !all || !a)
@@ -61,6 +57,7 @@ void	rr(t_stack *a, t_stack *b, int print, t_all *all)
 	all->action_count++;
 }
 
+/* Returns last element of the stack */
 t_node	*last_element(t_stack *sta)
 {
 	t_node	*elem;
