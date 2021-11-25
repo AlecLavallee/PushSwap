@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:09 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 14:20:10 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:50:13 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	where_to_insert(t_stack *sta, int x, t_node *tmp, t_node *prev)
 		pos -= stack_length(sta);
 	return (pos);
 }
+
 /* Finds the smallest number of actions to sort the element */
 t_node	*evaluate_actions(t_all *all, t_params *params)
 {

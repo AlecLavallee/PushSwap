@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 15:56:43 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/25 15:57:06 by alelaval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "get_next_line.h"
 
@@ -33,7 +45,7 @@ int	execute_read_action(char *action, t_all *all)
 		rrb(all->b, 0, all);
 	else if (!ft_strcmp(action, "rrr"))
 		rrr(all->a, all->b, 0, all);
-	 else if (!ft_strcmp(action, "sa"))
+	else if (!ft_strcmp(action, "sa"))
 		sa(all->a, 0, all);
 	else if (!ft_strcmp(action, "sb"))
 		sb(all->b, 0, all);
