@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:09 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:11:21 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:20:10 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	init_variables(int *i, int *pos, bool *end)
 	*end = false;
 }
 
-/* Calcule le nombre d'actions a faire pour positionner au bon index sur A */
-/* Pour tous les elements, a recalculer apres avoir deplacé 1 élément */
+/* Calculate number of actions to do to position element on A */
+/* Need to recalculate for every elements after 1 element has been moved*/
 int	where_to_insert(t_stack *sta, int x, t_node *tmp, t_node *prev)
 {
 	int			i;

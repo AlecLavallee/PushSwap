@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:34:38 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:18:27 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:22:47 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	largest_keep_a(t_node *start, t_stack *stack, bool define)
 	return (count);
 }
 
-/* returns the address of the first element of the sorted suit to keep in A */
+/* Returns the address of the first element of the sorted suit to keep in A */
 t_node	*get_max_keep(t_stack *stack)
 {
 	t_node	*elem;

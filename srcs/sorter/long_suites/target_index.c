@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 16:33:55 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:45:50 by alelaval         ###   ########.fr       */
+/*   Created: 2021/11/17 14:33:55 by alelaval          #+#    #+#             */
+/*   Updated: 2021/11/25 12:34:55 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack	*bubble_sort_cpy(t_stack *cpy)
 	return (cpy);
 }
 
-/* Renseignement du target index sur la copie */
+/* Affects target index to elements of the copied stack */
 void	set_target_index_cpy(t_stack *cpy)
 {
 	t_node	*elem;
@@ -86,7 +86,7 @@ void	set_target_index_cpy(t_stack *cpy)
 	}
 }
 
-/* Renseignement du target index sur la stack A / structure principales */
+/* Affects target index to elements of the original stack A */
 void	set_target_index(t_stack *sta)
 {
 	t_node	*elem;

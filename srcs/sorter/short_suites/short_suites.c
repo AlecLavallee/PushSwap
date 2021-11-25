@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:33:42 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:30:49 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:37:39 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ void	sort_three(t_stack *a, t_all *all)
 		rra(a, 1, all);
 }
 
+/* Gets the smallest and biggest value of the stack A */
+/* Brings the smallest value to the top of A and push it to B */
+/* Then if A more than 3 elements takes the biggest and push it to B */
 void	prep_set(t_stack *a, t_stack *b, t_all *all)
 {
 	int	big;
@@ -108,8 +111,6 @@ int	small_cases(t_stack *a, t_stack *b, t_all *all)
 	}
 	else
 		sort_more_three(a, b, all);
-	if (is_empty_stack(all->a))
-		error(all, 1, NULL, NULL);
 	if (is_empty_stack(all->a))
 		error(all, 1, NULL, NULL);
 	free_all(all, NULL, NULL);

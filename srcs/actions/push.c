@@ -6,13 +6,13 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:36:13 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:41:33 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:22:16 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Permet de pousser le premier élément de la stack a sur la stack b */
+/* Push first element of stack one to stack two */
 void	push_other_stack(t_stack *one, t_stack *two)
 {
 	t_node	*elem;
@@ -34,7 +34,7 @@ void	push_other_stack(t_stack *one, t_stack *two)
 	}
 }
 
-/* Fonction permettant d'ajouter un élément à la fin de la stack a */
+/* Push new element to end of the specified stack sta */
 void	push_end(t_stack *sta, int x, t_all *all)
 {
 	t_node	*elem;
@@ -62,15 +62,15 @@ void	push_end(t_stack *sta, int x, t_all *all)
 	elem->next = NULL;
 }
 
-/* Ajoute un element a une liste en renseignant sa valeur et son origine */
-void	push_end_plus_origin(t_stack *sta, int x, t_node *ori, t_all *m)
+/* Adds element to the end of the list with its value and origin as params */
+void	push_end_plus_origin(t_stack *sta, int x, t_node *ori, t_all *all)
 {
 	t_node	*elem;
 	t_node	*temp;
 
 	elem = (t_node *)malloc(sizeof(t_node));
 	if (!elem)
-		error(m, 1, NULL, NULL);
+		error(all, 1, NULL, NULL);
 	elem->value = x;
 	elem->init_pos = ori;
 	if (elem == NULL)
