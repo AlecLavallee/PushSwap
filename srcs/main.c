@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:26:53 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:44:36 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:49:40 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ void	algorithm(t_all *all)
 int	main(int argc, char **argv)
 {
 	t_all	*all;
-	int		red_args;
+	int		args;
 
 	all = init_all();
 	if (argc >= 2)
 	{
-		red_args = read_args(argc, argv, all);
+		args = read_args(argc, argv, all);
 		if (is_empty_stack(all->a))
 			error(all, 1, NULL, NULL);
 		if (is_sorted_stack(all->a))
 			free_all(all, NULL, NULL);
-		if (red_args <= 5)
+		if (args <= 5)
 			small_cases(all->a, all->b, all);
 		else
 			algorithm(all);
