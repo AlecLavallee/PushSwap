@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:36:20 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:40:38 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:16:58 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	reverse_rotate(t_stack *sta)
 	t_node	*prev;
 	t_node	*elem;
 
-	if (!sta->top || !sta->top->next || !sta)
+	if (!sta || !sta->top || !sta->top->next)
 		return ;
 	elem = sta->top;
 	while (elem->next)

@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:43:19 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 12:33:02 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 20:00:11 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_newline(char *s, t_all *all)
 		i++;
 	}
 	new_line[i] = '\0';
+	all->line = new_line;
 	return (new_line);
 }
 

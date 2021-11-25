@@ -17,9 +17,9 @@ SRCS_COMMON =	./srcs/stack/utils1.c \
 				./srcs/parsing/parsing_utils.c \
 				./srcs/exit/exit.c \
 
-SRCS_CHECKER =	./srcs/checker/get_next_line.c \
+SRCS_CHECKER =	./srcs/checker/main.c \
+				./srcs/checker/get_next_line.c \
 				./srcs/checker/get_next_line_utils.c \
-				./srcs/checker/main.c \
 
 OBJS_SORTER =	${SRCS_SORTER:.c=.o}
 OBJS_COMMON =	${SRCS_COMMON:.c=.o}
@@ -36,9 +36,10 @@ RM = 		rm -rf
 
 all: 		${NAME}
 
+bonus:		checker
+
 .c.o:
 			${CC} ${CFLAGS} -I${INCLUDE} -c $< -o ${<:.c=.o}
-
 
 ${NAME}:	${OBJS_COMMON} ${OBJS_SORTER}
 			${CC} ${CFLAGS} -I${INCLUDE} -o ${NAME} ${OBJS_COMMON} ${OBJS_SORTER}
@@ -54,6 +55,4 @@ fclean:	clean
 
 re:			fclean all
 
-bonus:		checker
-
-.PHONY:		checker bonus all clean fclean re
+.PHONY:		bonus all clean fclean re

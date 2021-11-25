@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 14:33:55 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 12:34:55 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:45:46 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_stack	*cpy_stack(t_stack *sta, t_all *all, t_params *params)
 	return (cpy);
 }
 
+/* Swap the value of 2 elements and marks the target in the original elements */
 void	bubble_swap(t_node **ori, t_node **tmplst, t_node **elem, int *t)
 {
 	*t = (*elem)->value;

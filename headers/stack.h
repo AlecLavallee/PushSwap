@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:38:45 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/23 16:41:25 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:47:00 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_all
 	int				max;
 	int				max_size;
 	int				action_count;
+	char			*line;
 }				t_all;
 
 typedef struct s_params

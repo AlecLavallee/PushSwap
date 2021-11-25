@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:09 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 15:50:13 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 18:56:27 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void	init_variables(int *i, int *pos, bool *end)
 	*end = false;
 }
 
-/* Calculate number of actions to do to position element on A */
-/* Need to recalculate for every elements after 1 element has been moved*/
+/* Calculate number of actions to do to position the element on A */
 int	where_to_insert(t_stack *sta, int x, t_node *tmp, t_node *prev)
 {
 	int			i;

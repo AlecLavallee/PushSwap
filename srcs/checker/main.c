@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:56:43 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 15:57:06 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:59:35 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ int	execute_read_action(char *action, t_all *all)
 		sb(all->b, 0, all);
 	else if (!ft_strcmp(action, "ss"))
 		ss(all->a, all->b, 0, all);
-	else if (!ft_strcmp(action, "pa") && !is_empty_stack(all->b))
+	else if (!ft_strcmp(action, "pa"))
 		pa(all->b, all->a, 0, all);
-	else if (!ft_strcmp(action, "pb") && !is_empty_stack(all->a))
+	else if (!ft_strcmp(action, "pb"))
 		pb(all->a, all->b, 0, all);
 	else if (!ft_strcmp(action, "ra"))
 		ra(all->a, 0, all);
@@ -75,6 +75,7 @@ int	main(int argc, char **argv)
 		{
 			execute_read_action(action_messages, all);
 			free(action_messages);
+			action_messages = NULL;
 		}
 		if (is_sorted_stack(all->a) && is_empty_stack(all->b))
 		{
@@ -88,5 +89,4 @@ int	main(int argc, char **argv)
 		}
 	}
 	error(all, 0, NULL, NULL);
-	return (0);
 }

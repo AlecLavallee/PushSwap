@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:30:22 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 13:56:18 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:20:17 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate_stack(t_stack *sta)
 	t_node	*last;
 	t_node	*tmp;
 
-	if (!sta)
+	if (!sta || !sta->top || !sta->top->next)
 		return ;
 	last = last_element(sta);
 	tmp = sta->top;
@@ -48,7 +48,7 @@ void	rb(t_stack *b, int print, t_all *all)
 
 void	rr(t_stack *a, t_stack *b, int print, t_all *all)
 {
-	if (!b || !all || !a)
+	if (!a || !b || !all)
 		return ;
 	rotate_stack(a);
 	rotate_stack(b);

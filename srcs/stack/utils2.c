@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:32:48 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/24 11:25:46 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/25 19:13:50 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	is_sorted_stack(t_stack *a)
 	t_node	*elem;
 
 	elem = a->top;
-	while (elem->next)
+	while (a->top && elem->next)
 	{
 		if (elem->next->value < elem->value)
 			return (ERROR);
