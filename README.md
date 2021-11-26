@@ -28,4 +28,11 @@
 
 10.Evaluation and optimization of the best moves to make to sort the element.
 
-11.
+/* sort.c */
+
+11.Calls the sorting functions who execute the necessary rotations (ra/rb/rr/rra/rrb/rrr) and then pushes from stack B to A (pb).
+
+/* main.c */
+12.After stack B has been emptied, if the smallest value is not on top. It is brought on top.
+
+13.Stack A is checked if empty, returns an error if it is else calls the function to free all memory.
