@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:27:56 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 19:36:09 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:18:11 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_all	*init_all(void)
 	all->a = a;
 	all->b = b;
 	all->line = NULL;
+	all->s = NULL;
 	return (all);
 }
 

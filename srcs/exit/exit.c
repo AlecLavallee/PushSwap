@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:35:38 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 19:46:50 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:09:57 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	free_all(t_all *all, int *min_a, int *min_b)
 	free_stack(all->b);
 	if (all->line)
 		free(all->line);
+	if (all->s)
+		free(all->s);
 	free(all);
 	all = NULL;
 	if (!min_a)

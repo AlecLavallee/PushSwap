@@ -6,7 +6,7 @@
 /*   By: alelaval <alelaval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:43:19 by alelaval          #+#    #+#             */
-/*   Updated: 2021/11/25 20:00:11 by alelaval         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:23:49 by alelaval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ char	*ft_prep_s(char *s)
 	return (clean_s);
 }
 
+int	free_buffer(char *buffer)
+{
+	free(buffer);
+	return (-1);
+}
+
 int	get_next_line(int fd, char **line, t_all *all)
 {
 	static char	*s;
@@ -95,16 +101,14 @@ int	get_next_line(int fd, char **line, t_all *all)
 	{
 		b_read = read(fd, buffer, BUFFER_SIZE);
 		if (b_read == -1)
-		{
-			free(buffer);
-			return (-1);
-		}
+			return (free_buffer(buffer));
 		buffer[b_read] = '\0';
 		s = gnl_strjoin(s, buffer, all);
 	}
 	free(buffer);
 	*line = ft_newline(s, all);
 	s = ft_prep_s(s);
+	all->s = s;
 	if (b_read == 0)
 		return (ERROR);
 	return (SUCCESS);
